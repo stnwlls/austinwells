@@ -15,6 +15,7 @@ const projectsData = [
       "#webgl"
     ],
     image: "/images/project-images/threejs-solar-system.png",
+    imageFit: "contain",
   },
   {
     title: "Python Construction GUI",
