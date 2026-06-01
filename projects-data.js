@@ -1,5 +1,21 @@
 const projectsData = [
   {
+    title: "Three.js Solar System",
+    description: "An interactive Three.js solar system scene with textured planets, orbital animation, axial tilts, Saturn rings, Earth clouds and night lights, Pluto, pause controls, and project credits built into an animated information panel.",
+    month: "June",
+    year: 2026,
+    links: {
+      github: "https://github.com/stnwlls/threejs-solar-system"
+    },
+    hashtags: [
+      "#threejs",
+      "#javascript",
+      "#vite",
+      "#webgl"
+    ],
+    image: "/images/project-images/threejs-solar-system.svg",
+  },
+  {
     title: "Python Construction GUI",
     description: "A Python desktop application for construction service browsing, quote requests, manager workflows, service records, tax calculations, threaded logging, file persistence, and search/sort utilities.",
     month: "May",
