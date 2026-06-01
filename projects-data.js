@@ -1,11 +1,12 @@
 const projectsData = [
   {
     title: "Three.js Solar System",
-    description: "An interactive Three.js solar system scene with textured planets, orbital animation, axial tilts, Saturn rings, Earth clouds and night lights, Pluto, pause controls, and project credits built into an animated information panel.",
+    description: "A Three.js scene focused on core 3D concepts: scene/camera/renderer setup, mesh creation, texture mapping, lighting, object hierarchies, orbital transforms, axial rotation, shader-based overlays, animation loops, and OrbitControls navigation.",
     month: "June",
     year: 2026,
     links: {
-      github: "https://github.com/stnwlls/threejs-solar-system"
+      github: "https://github.com/stnwlls/threejs-solar-system",
+      live: "/projects/threejs-solar-system/index.html"
     },
     hashtags: [
       "#threejs",
@@ -13,7 +14,7 @@ const projectsData = [
       "#vite",
       "#webgl"
     ],
-    image: "/images/project-images/threejs-solar-system.svg",
+    image: "/images/project-images/threejs-solar-system.png",
   },
   {
     title: "Python Construction GUI",
