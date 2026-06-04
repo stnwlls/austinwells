@@ -1,7 +1,7 @@
 const projectsData = [
   {
     title: "Three.js Solar System",
-    description: "A Three.js scene focused on core 3D concepts: scene/camera/renderer setup, mesh creation, texture mapping, lighting, object hierarchies, orbital transforms, axial rotation, shader-based overlays, animation loops, and OrbitControls navigation.",
+    description: "A Three.js solar system scene with textured planets, orbital animation, lighting, OrbitControls navigation, pause/info UI, and a planet chooser that lets visitors focus and follow individual planets.",
     month: "June",
     year: 2026,
     links: {
