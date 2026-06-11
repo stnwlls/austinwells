@@ -13,20 +13,38 @@ html, body {
   padding: 0;
 }
 
-body {
+html {
+  min-height: 100%;
   background-color: var(--color-black);
-  background-image: 
+}
+
+body {
+  background: transparent;
+  font-family: var(--font-jura);
+  color: var(--color-lightblue);
+  padding-top: calc(60px + env(safe-area-inset-top));
+  padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--color-black);
+  background-image:
   radial-gradient(at 80% 80%, hsla(240, 75%, 34%, 1) 0px, transparent 50%),
   radial-gradient(at 26% 70%, hsla(262, 20%, 34%, 1) 0px, transparent 50%),
   radial-gradient(at 77% 18%, hsla(240, 38%, 34%, 1) 0px, transparent 50%),
   radial-gradient(at 6% 8%, hsla(240, 45%, 34%, 1) 0px, transparent 50%);
-  background-attachment: fixed;
-  font-family: var(--font-jura);
-  color: var(--color-lightblue);
-  padding-top: 60px;
-  padding-bottom: 6rem;
-  min-height: 100vh;
-  margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .topnav {
@@ -34,8 +52,9 @@ body {
   justify-content: space-between;
   position: fixed;
   top: 0;
-  width: 96%;
-  padding: var(--navbar-spacing-y) var(--navbar-spacing);
+  width: 100%;
+  box-sizing: border-box;
+  padding: calc(var(--navbar-spacing-y) + env(safe-area-inset-top)) calc(var(--navbar-spacing) + env(safe-area-inset-right)) var(--navbar-spacing-y) calc(var(--navbar-spacing) + env(safe-area-inset-left));
   backdrop-filter: blur(10px);
   z-index: 1000;
 }
@@ -77,8 +96,9 @@ body {
 .navbar {
   position: fixed;
   bottom: 0;
-  width: 96%;
-  padding: var(--navbar-spacing-y) var(--navbar-spacing);
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--navbar-spacing-y) calc(var(--navbar-spacing) + env(safe-area-inset-right)) calc(var(--navbar-spacing-y) + env(safe-area-inset-bottom)) calc(var(--navbar-spacing) + env(safe-area-inset-left));
   font-size: 1.5em;
   backdrop-filter: blur(10px);
   z-index: 1000;
@@ -816,6 +836,10 @@ body {
     background-image: none !important;
   }
 
+  body::before {
+    display: none !important;
+  }
+
   .topnav,
   .navbar,
   .resume-meta-social {
@@ -1097,7 +1121,7 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding-top: 40px;
+    padding-top: calc(40px + env(safe-area-inset-top));
   }
 
   .hero {
@@ -1108,7 +1132,7 @@ body {
 
 @media (max-width: 430px) {
   body {
-    padding-top: 34px;
+    padding-top: calc(34px + env(safe-area-inset-top));
   }
 
   .hero {
