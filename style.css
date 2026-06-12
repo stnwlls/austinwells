@@ -388,6 +388,14 @@ body::before {
   margin-top: 1vh;
 }
 
+.spam-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .contact-form label {
   margin: 1rem;
 }
@@ -425,6 +433,16 @@ body::before {
   background-color: var(--color-lightblue);
   color: var(--color-black);
   transition: background-color 0.5s, color 0.5s;
+}
+
+.contact-form button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.contact-form button:disabled:hover {
+  background-color: transparent;
+  color: var(--color-lightblue);
 }
 
 /* resume */

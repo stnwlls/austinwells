@@ -45,20 +45,55 @@
   <section class="contact-form">
     <h2>get in touch with me</h2>
     <a href="mailto:hello@austinwells.dev">hello@austinwells.dev</a>
-    <form action="https://formspree.io/f/xwpkaveq" method="post">
+    <form action="https://formspree.io/f/xwpkaveq" method="post" data-contact-form>
+      <div class="spam-field" aria-hidden="true">
+        <label for="company">company</label>
+        <input type="text" id="company" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+
       <label for="name">name</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" autocomplete="name" maxlength="100" required>
       
       <label for="email">email</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" autocomplete="email" maxlength="254" required>
       
       <label for="message">message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+      <textarea id="message" name="message" rows="5" maxlength="2000" required></textarea>
       
-      <button type="submit" name="submit">send</button>
+      <button type="submit" name="submit" disabled>send</button>
+      <noscript>please email me directly if the form does not submit.</noscript>
     </form>
   </section>
-    
+
+  <script>
+    (() => {
+      const form = document.querySelector('[data-contact-form]');
+      const minimumTimeOnPage = 3500;
+
+      if (!form) return;
+
+      const startedAt = Date.now();
+      const submitButton = form.querySelector('button[type="submit"]');
+      const honeypot = form.querySelector('input[name="_gotcha"]');
+
+      if (!submitButton || !honeypot) return;
+
+      window.setTimeout(() => {
+        submitButton.disabled = false;
+      }, minimumTimeOnPage);
+
+      form.addEventListener('submit', (event) => {
+        const botFilledHiddenField = honeypot.value.trim().length > 0;
+        const submittedTooFast = Date.now() - startedAt < minimumTimeOnPage;
+
+        if (botFilledHiddenField || submittedTooFast) {
+          event.preventDefault();
+
+          if (botFilledHiddenField) form.reset();
+        }
+      });
+    })();
+  </script>
   <script src="/analytics-events.js" defer></script>
 </body>
 </html>
