@@ -102,20 +102,6 @@ const projectsData = [
     image: "/images/project-images/wordpresstheme.png",
   },
   {
-    title: "Syntax & Coffee - WordPress",
-    description: "Syntax & Coffee is a personal blog where I share my journey as a web developer. Built using WordPress, I handled theme customization, implemented custom CSS, configured plugins, and structured content to support a modern, maintainable blog layout.",
-    month: "August",
-    year: 2025,
-    links: {
-      live: "https://syntaxandcoffee.io"
-    },
-    hashtags: [
-      "#wordpress",
-      "#css"
-    ],
-    image: "/images/project-images/syntaxandcoffee.png",
-  },
-  {
     title: "Content Audit and Redesign in Figma",
     description: "Conducted a content audit and full redesign of the Memorial Health Bariatric Surgery page using Figma. The redesign focused on reorganizing content for improved user experience and readability. Key changes included consolidating large blocks of text into smaller, scannable sections with clear headings, and integrating more engaging visuals.",
     month: "October",

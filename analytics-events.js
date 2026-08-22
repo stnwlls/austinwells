@@ -40,7 +40,6 @@
     if (normalized.includes('instagram.com')) return 'click_instagram';
     if (normalized.includes('spotify.com')) return 'click_spotify';
     if (normalized.includes('figma.com')) return 'click_figma';
-    if (normalized.includes('syntaxandcoffee.io')) return 'click_syntax_coffee';
     if (normalized.endsWith('.docx') || normalized.includes('resume')) return 'click_resume';
     if (anchor.closest('.project-card') && normalized.includes('github.com')) return 'click_project_code';
     if (anchor.closest('.project-card') || normalized.includes('/projects/')) return 'click_project_live';
